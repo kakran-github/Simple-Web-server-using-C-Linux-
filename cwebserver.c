@@ -17,9 +17,9 @@ int main (){
     struct sockaddr_in address;
     int address_len = sizeof(address);
  
-    // Set up socket address 
+    // Set up server socket address 
     address.sin_family = AF_INET; //ipv4
-    address.sin_addr.s_addr = INADDR_ANY; //Just for learning not a good solution for real world use.
+    address.sin_addr.s_addr = INADDR_ANY; //Binds to all network interfaces, for real production specify an explicit IP for security and control.
     address.sin_port = htons(PORT); 
 
     // Create socket
